@@ -1,14 +1,27 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion, useInView, useAnimation } from "framer-motion"
-import { Github, Linkedin, Twitter, ExternalLink, Send, Mail, MapPin, ArrowRight } from "lucide-react"
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion, useInView, useAnimation } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  ExternalLink,
+  Send,
+  Mail,
+  MapPin,
+  ArrowRight,
+  Trophy,
+  Flame,
+  Code,
+  Globe,
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Portfolio() {
   return (
@@ -20,6 +33,7 @@ export default function Portfolio() {
         <AboutSection />
         <AngleDivider />
         <SkillsSection />
+        <AchievementsSection />
         <WaveDivider flip />
         <ProjectsSection />
         <AngleDivider flip />
@@ -27,7 +41,7 @@ export default function Portfolio() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
 
 function Header() {
@@ -35,7 +49,9 @@ function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-black/80 backdrop-blur-md supports-[backdrop-filter]:bg-black/60">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="font-bold text-xl">
-          <span className="bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">Priyanshu</span>
+          <span className="bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+            Priyanshu
+          </span>
           <span className="text-white"> Raj</span>
         </Link>
         <nav className="hidden md:flex gap-8">
@@ -69,39 +85,38 @@ function Header() {
           </Link>
         </nav>
         <a
-  href="/Priyanshu_Raj_CV.pdf"
-  download
-  className="hidden md:flex items-center justify-center px-4 py-2 text-sm font-medium bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-700 hover:to-cyan-600 text-white border-0 shadow-lg shadow-violet-700/20 hover:shadow-violet-700/40 transition-all duration-300 rounded-md"
->
-  Resume
-</a>
+          href="/priyanshu_CV_new.pdf"
+          download
+          className="hidden md:flex items-center justify-center px-4 py-2 text-sm font-medium bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-700 hover:to-cyan-600 text-white border-0 shadow-lg shadow-violet-700/20 hover:shadow-violet-700/40 transition-all duration-300 rounded-md"
+        >
+          Resume
+        </a>
 
-<Button
-  variant="ghost"
-  size="icon"
-  className="md:hidden text-gray-300 hover:text-white hover:bg-gray-800"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="h-6 w-6"
-  >
-    <line x1="4" x2="20" y1="12" y2="12" />
-    <line x1="4" x2="20" y1="6" y2="6" />
-    <line x1="4" x2="20" y1="18" y2="18" />
-  </svg>
-</Button>
-
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden text-gray-300 hover:text-white hover:bg-gray-800"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-6 w-6"
+          >
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </Button>
       </div>
     </header>
-  )
+  );
 }
 
 function HeroSection() {
@@ -125,13 +140,18 @@ function HeroSection() {
             </motion.span>
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl/none">
-            Hi, I'm 
-            <span className="bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent"> Priyanshu</span>
+            Hi, I'm
+            <span className="bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+              {" "}
+              Priyanshu
+            </span>
           </h1>
-          <h2 className="text-2xl font-medium text-gray-400 sm:text-3xl">Crafting digital experiences</h2>
+          <h2 className="text-2xl font-medium text-gray-400 sm:text-3xl">
+            Crafting digital experiences
+          </h2>
           <p className="max-w-[600px] text-gray-400 md:text-xl">
-            I build accessible, responsive, and performant web applications with modern technologies that solve
-            real-world problems.
+            I build accessible, responsive, and performant web applications with
+            modern technologies that solve real-world problems.
           </p>
           <div className="flex gap-4 mt-4">
             <Button className="bg-gradient-to-r from-violet-600 to-cyan-500 hover:from-violet-700 hover:to-cyan-600 text-white border-0 shadow-lg shadow-violet-700/20 hover:shadow-violet-700/40 transition-all duration-300 group">
@@ -170,7 +190,7 @@ function HeroSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
 
 function WaveDivider({ flip = false }: { flip?: boolean }) {
@@ -193,7 +213,7 @@ function WaveDivider({ flip = false }: { flip?: boolean }) {
         <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" />
       </svg>
     </div>
-  )
+  );
 }
 
 function AngleDivider({ flip = false }: { flip?: boolean }) {
@@ -208,19 +228,19 @@ function AngleDivider({ flip = false }: { flip?: boolean }) {
         <path d="M1200 120L0 16.48V0h1200v120z" />
       </svg>
     </div>
-  )
+  );
 }
 
 function AboutSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const controls = useAnimation()
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [controls, isInView])
+  }, [controls, isInView]);
 
   return (
     <section id="about" className="py-24 sm:py-32 bg-gray-900">
@@ -236,13 +256,19 @@ function AboutSection() {
           className="flex flex-col items-center text-center mb-12"
         >
           <motion.h2
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent"
           >
             About Me
           </motion.h2>
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="w-20 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full mb-8"
           />
         </motion.div>
@@ -259,16 +285,21 @@ function AboutSection() {
           >
             <h3 className="text-2xl font-bold text-white">My Journey</h3>
             <p className="text-gray-400 leading-relaxed">
-              I'm a passionate full-stack developer with over 5 years of experience building web applications. My
-              journey in tech started when I built my first website at 15, and I've been hooked ever since.
+              I'm a passionate full-stack developer with over 1 years of
+              experience building web applications. My journey in tech started
+              when I built my first website at 17, and I've been hooked ever
+              since.
             </p>
             <p className="text-gray-400 leading-relaxed">
-              I specialize in React, Next.js, and Node.js, with a strong focus on creating accessible, performant, and
-              user-friendly applications. I believe in writing clean, maintainable code and staying up-to-date with the
-              latest technologies and best practices.
+              I specialize in React, Next.js, and Node.js, with a strong focus
+              on creating accessible, performant, and user-friendly
+              applications. I believe in writing clean, maintainable code and
+              staying up-to-date with the latest technologies and best
+              practices.
             </p>
             <p className="text-gray-400 leading-relaxed">
-              When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new recipes.
+              When I'm not coding, you can find me hiking, reading sci-fi
+              novels, or experimenting with new recipes.
             </p>
           </motion.div>
 
@@ -291,7 +322,8 @@ function AboutSection() {
                 key={item.subtitle}
                 whileHover={{
                   y: -5,
-                  boxShadow: "0 20px 25px -5px rgba(76, 29, 149, 0.1), 0 10px 10px -5px rgba(76, 29, 149, 0.04)",
+                  boxShadow:
+                    "0 20px 25px -5px rgba(76, 29, 149, 0.1), 0 10px 10px -5px rgba(76, 29, 149, 0.04)",
                 }}
                 transition={{ duration: 0.2 }}
                 className="flex flex-col items-center p-6 rounded-xl backdrop-blur-md bg-gradient-to-br from-gray-800/60 to-gray-900/60 border border-gray-700/50 shadow-xl"
@@ -317,7 +349,14 @@ function AboutSection() {
                     )}
                     {item.icon === "layout" && (
                       <>
-                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                        <rect
+                          width="18"
+                          height="18"
+                          x="3"
+                          y="3"
+                          rx="2"
+                          ry="2"
+                        />
                         <line x1="3" x2="21" y1="9" y2="9" />
                         <line x1="9" x2="9" y1="21" y2="9" />
                       </>
@@ -342,26 +381,28 @@ function AboutSection() {
                   </svg>
                 </div>
                 <h4 className="text-xl font-bold text-white">{item.title}</h4>
-                <p className="text-sm text-gray-400 text-center">{item.subtitle}</p>
+                <p className="text-sm text-gray-400 text-center">
+                  {item.subtitle}
+                </p>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function SkillsSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const controls = useAnimation()
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [controls, isInView])
+  }, [controls, isInView]);
 
   const skills = [
     { name: "React", level: 90 },
@@ -370,7 +411,7 @@ function SkillsSection() {
     { name: "Node.js", level: 75 },
     { name: "Tailwind CSS", level: 95 },
     { name: "GraphQL", level: 70 },
-  ]
+  ];
 
   return (
     <section id="skills" className="py-24 sm:py-32 bg-black">
@@ -386,21 +427,30 @@ function SkillsSection() {
           className="flex flex-col items-center text-center mb-16"
         >
           <motion.h2
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent"
           >
             My Skills
           </motion.h2>
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="w-20 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full mb-8"
           />
           <motion.p
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="max-w-[600px] text-gray-400"
           >
-            I've worked with a variety of technologies in the web development world. Here are my main areas of
-            expertise:
+            I've worked with a variety of technologies in the web development
+            world. Here are my main areas of expertise:
           </motion.p>
         </motion.div>
 
@@ -430,7 +480,11 @@ function SkillsSection() {
                     className="h-full rounded-full bg-gradient-to-r from-violet-600 to-cyan-500"
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: 0.2 * index, ease: "easeOut" }}
+                    transition={{
+                      duration: 1,
+                      delay: 0.2 * index,
+                      ease: "easeOut",
+                    }}
                   />
                 </div>
               </motion.div>
@@ -494,14 +548,28 @@ function SkillsSection() {
                     )}
                     {skill.icon === "layout" && (
                       <>
-                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                        <rect
+                          width="18"
+                          height="18"
+                          x="3"
+                          y="3"
+                          rx="2"
+                          ry="2"
+                        />
                         <line x1="3" x2="21" y1="9" y2="9" />
                         <line x1="9" x2="9" y1="21" y2="9" />
                       </>
                     )}
                     {skill.icon === "smartphone" && (
                       <>
-                        <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                        <rect
+                          width="14"
+                          height="20"
+                          x="5"
+                          y="2"
+                          rx="2"
+                          ry="2"
+                        />
                         <line x1="12" x2="12.01" y1="18" y2="18" />
                       </>
                     )}
@@ -534,61 +602,140 @@ function SkillsSection() {
                     )}
                   </svg>
                 </div>
-                <h4 className="font-medium text-white text-center">{skill.name}</h4>
+                <h4 className="font-medium text-white text-center">
+                  {skill.name}
+                </h4>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
+}
+
+function AchievementsSection() {
+  const achievements = [
+    {
+      icon: <Trophy className="h-6 w-6 text-cyan-400" />,
+      title: "Intern of the Year",
+      description:
+        "Awarded 'Intern of the Year' during my internship at a reputed NGO.",
+    },
+    {
+      icon: <Code className="h-6 w-6 text-cyan-400" />,
+      title: "200+ LeetCode Problems",
+      description:
+        "Sharpened problem-solving skills by solving over 200 coding challenges.",
+    },
+    {
+      icon: <Flame className="h-6 w-6 text-cyan-400" />,
+      title: "100-Day Coding Streak",
+      description:
+        "Completed a 100-day streak of continuous learning and coding practice.",
+    },
+    {
+      icon: <Globe className="h-6 w-6 text-cyan-400" />,
+      title: "DevBook Creator",
+      description:
+        "Built a blog platform for developers to share coding tips and experiences.",
+    },
+  ];
+
+  return (
+    <section className="container py-24 sm:py-32">
+      <div className="text-center mb-16">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl font-bold tracking-tight sm:text-5xl underline decoration-cyan-400 underline-offset-8"
+        >
+          <span className="bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+            My Achievements
+          </span>
+        </motion.h2>
+        <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+          Milestones that reflect my journey, effort, and consistency as a
+          full-stack developer.
+        </p>
+      </div>
+      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+        {achievements.map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="rounded-xl border border-violet-500/20 p-6 bg-gradient-to-r from-violet-500/10 to-cyan-500/10 shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="bg-violet-600/10 p-2 rounded-full">
+                {item.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+            </div>
+            <p className="text-sm text-gray-400">{item.description}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 function ProjectsSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const controls = useAnimation()
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [controls, isInView])
+  }, [controls, isInView]);
 
   const projects = [
     {
       title: "StudyNotion",
       description: "A fully functional EdTech platform like Udemy.",
-      image: "https://img.freepik.com/free-psd/flat-design-education-template_23-2150251293.jpg?t=st=1746031859~exp=1746035459~hmac=03cc4c29e86003fe4e7f31a8f09c18d85b1594ca5cb6343fd21c269ccc1ef1f2&w=1380",
+      image:
+        "https://img.freepik.com/free-psd/flat-design-education-template_23-2150251293.jpg?t=st=1746031859~exp=1746035459~hmac=03cc4c29e86003fe4e7f31a8f09c18d85b1594ca5cb6343fd21c269ccc1ef1f2&w=1380",
       tags: ["Next.js", "Tailwind CSS", "Stripe", "Supabase"],
       github: "https://github.com/priyanshu654/studyNotion",
-      demo: "#",
+      demo: "https://my-study-notion.vercel.app/",
     },
     {
       title: "Expense Tracker",
-      description: "React-based budget management app with categorized transactions.",
-      image: "https://img.freepik.com/free-vector/aesthetic-cool-budget-planner_1421494-136.jpg?t=st=1746031989~exp=1746035589~hmac=a16f87dec0800adfbc43c64894e0cfc8c783706191ea2202e4bfc4e05e7a7f45&w=740",
+      description:
+        "React-based budget management app with categorized transactions.",
+      image:
+        "https://img.freepik.com/free-vector/aesthetic-cool-budget-planner_1421494-136.jpg?t=st=1746031989~exp=1746035589~hmac=a16f87dec0800adfbc43c64894e0cfc8c783706191ea2202e4bfc4e05e7a7f45&w=740",
       tags: ["React", "TypeScript", "Redux", "Firebase"],
       github: "https://github.com/priyanshu654",
       demo: "#",
     },
     {
       title: "usepopCorn.",
-      description:"A movie app using OMDb API to manage a watchlist and rate movies.",
-      image: "https://img.freepik.com/premium-photo/smartphone-application-online-buying-booking-cinema-tickets_250014-1.jpg?uid=R99016623&ga=GA1.1.1985857619.1744356112&semt=ais_hybrid&w=740",
+      description:
+        "A movie app using OMDb API to manage a watchlist and rate movies.",
+      image:
+        "https://img.freepik.com/premium-photo/smartphone-application-online-buying-booking-cinema-tickets_250014-1.jpg?uid=R99016623&ga=GA1.1.1985857619.1744356112&semt=ais_hybrid&w=740",
       tags: ["React", "D3.js", "Tailwind CSS", "REST API"],
       github: "https://github.com/priyanshu654",
-      demo: "#",
+      demo: "https://usepopcorn-but-better.netlify.app/",
     },
     {
       title: "worldWise",
       description: "A travel map app to track places visited using Leaflet.",
-      image: "https://img.freepik.com/free-vector/white-world-map_23-2147509768.jpg?uid=R99016623&ga=GA1.1.1985857619.1744356112&semt=ais_hybrid&w=740",
+      image:
+        "https://img.freepik.com/free-vector/white-world-map_23-2147509768.jpg?uid=R99016623&ga=GA1.1.1985857619.1744356112&semt=ais_hybrid&w=740",
       tags: ["Next.js", "GraphQL", "Styled Components"],
       github: "https://github.com/priyanshu654",
-      demo: "#",
+      demo: "https://worldwise-jonas.netlify.app/",
     },
-  ]
+  ];
 
   return (
     <section id="projects" className="py-24 sm:py-32 bg-gray-900">
@@ -604,21 +751,31 @@ function ProjectsSection() {
           className="flex flex-col items-center text-center mb-16"
         >
           <motion.h2
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent"
           >
             My Projects
           </motion.h2>
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="w-20 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full mb-8"
           />
           <motion.p
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="max-w-[600px] text-gray-400"
           >
-            Here are some of my recent projects. Each one was built with a focus on solving real problems and delivering
-            exceptional user experiences.
+            Here are some of my recent projects. Each one was built with a focus
+            on solving real problems and delivering exceptional user
+            experiences.
           </motion.p>
         </motion.div>
 
@@ -652,8 +809,12 @@ function ProjectsSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               <div className="p-6 flex flex-col">
-                <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
-                <p className="text-gray-400 mb-4 flex-1">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 mb-4 flex-1">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
@@ -696,19 +857,19 @@ function ProjectsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function ContactSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const controls = useAnimation()
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const controls = useAnimation();
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible")
+      controls.start("visible");
     }
-  }, [controls, isInView])
+  }, [controls, isInView]);
 
   return (
     <section id="contact" className="py-24 sm:py-32 bg-black">
@@ -724,21 +885,31 @@ function ContactSection() {
           className="flex flex-col items-center text-center mb-16"
         >
           <motion.h2
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent"
           >
             Get In Touch
           </motion.h2>
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="w-20 h-1 bg-gradient-to-r from-violet-500 to-cyan-400 rounded-full mb-8"
           />
           <motion.p
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             className="max-w-[600px] text-gray-400"
           >
-            Have a project in mind or want to discuss potential opportunities? Feel free to reach out using the form
-            below or through my social media channels.
+            Have a project in mind or want to discuss potential opportunities?
+            Feel free to reach out using the form below or through my social
+            media channels.
           </motion.p>
         </motion.div>
 
@@ -804,6 +975,8 @@ function ContactSection() {
           </motion.div>
 
           <motion.form
+            action="https://formsubmit.co/priyanshubkj10@gmail.com"
+            method="POST"
             variants={{
               hidden: { opacity: 0, x: 50 },
               visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
@@ -812,6 +985,9 @@ function ContactSection() {
             animate={controls}
             className="space-y-6 p-8 bg-gradient-to-br from-gray-800/60 to-gray-900/60 backdrop-blur-md rounded-xl shadow-xl border border-gray-700/50"
           >
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-gray-300">
@@ -819,7 +995,9 @@ function ContactSection() {
                 </label>
                 <Input
                   id="name"
+                  name="name"
                   placeholder="Your name"
+                  required
                   className="bg-gray-800/50 border-gray-700 focus:border-violet-500 text-white placeholder:text-gray-500 focus:ring-2 focus:ring-violet-500/20"
                 />
               </div>
@@ -829,8 +1007,10 @@ function ContactSection() {
                 </label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="Your email"
+                  required
                   className="bg-gray-800/50 border-gray-700 focus:border-violet-500 text-white placeholder:text-gray-500 focus:ring-2 focus:ring-violet-500/20"
                 />
               </div>
@@ -841,7 +1021,9 @@ function ContactSection() {
               </label>
               <Input
                 id="subject"
+                name="subject"
                 placeholder="How can I help you?"
+                required
                 className="bg-gray-800/50 border-gray-700 focus:border-violet-500 text-white placeholder:text-gray-500 focus:ring-2 focus:ring-violet-500/20"
               />
             </div>
@@ -851,7 +1033,9 @@ function ContactSection() {
               </label>
               <Textarea
                 id="message"
+                name="message"
                 placeholder="Your message"
+                required
                 className="min-h-[120px] bg-gray-800/50 border-gray-700 focus:border-violet-500 text-white placeholder:text-gray-500 focus:ring-2 focus:ring-violet-500/20"
               />
             </div>
@@ -865,26 +1049,38 @@ function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
+
 
 function Footer() {
   return (
     <footer className="py-8 border-t border-gray-800">
       <div className="container flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm text-gray-500">© {new Date().getFullYear()}. All rights reserved.</p>
+        <p className="text-sm text-gray-500">
+          © {new Date().getFullYear()}. All rights reserved.
+        </p>
         <div className="flex gap-6">
-          <Link href="https://www.instagram.com/priyanshu_.raaz/" className="text-gray-500 hover:text-cyan-400 transition-colors duration-300 relative group">
+          <Link
+            href="https://www.instagram.com/priyanshu_.raaz/"
+            className="text-gray-500 hover:text-cyan-400 transition-colors duration-300 relative group"
+          >
             <span className="absolute -inset-2 rounded-full bg-cyan-400/0 group-hover:bg-cyan-400/10 transition-all duration-300"></span>
             <Github className="h-5 w-5 relative z-10" />
             <span className="sr-only">GitHub</span>
           </Link>
-          <Link href="https://www.linkedin.com/in/priyanshuraj10/" className="text-gray-500 hover:text-cyan-400 transition-colors duration-300 relative group">
+          <Link
+            href="https://www.linkedin.com/in/priyanshuraj10/"
+            className="text-gray-500 hover:text-cyan-400 transition-colors duration-300 relative group"
+          >
             <span className="absolute -inset-2 rounded-full bg-cyan-400/0 group-hover:bg-cyan-400/10 transition-all duration-300"></span>
             <Linkedin className="h-5 w-5 relative z-10" />
             <span className="sr-only">LinkedIn</span>
           </Link>
-          <Link href="https://x.com/Priyans25198743" className="text-gray-500 hover:text-cyan-400 transition-colors duration-300 relative group">
+          <Link
+            href="https://x.com/Priyans25198743"
+            className="text-gray-500 hover:text-cyan-400 transition-colors duration-300 relative group"
+          >
             <span className="absolute -inset-2 rounded-full bg-cyan-400/0 group-hover:bg-cyan-400/10 transition-all duration-300"></span>
             <Twitter className="h-5 w-5 relative z-10" />
             <span className="sr-only">Twitter</span>
@@ -892,5 +1088,5 @@ function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
